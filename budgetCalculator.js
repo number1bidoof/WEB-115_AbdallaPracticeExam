@@ -2,7 +2,7 @@ let calcBtn = document.getElementById('calculateBudget')
 let result = document.getElementById('budgetResults')
 try {
     calcBtn.addEventListener('click', function(){
-        for (let i = 0; i<1;i++){
+        for (let i = 0; i<12;i++){
             let newP = document.createElement('p');
             let userIncome = Number(prompt("please enter your total monthly income"));
             let userExp = Number(prompt("Please enter you total monthly expenses"));
