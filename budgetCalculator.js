@@ -2,7 +2,7 @@ let calcBtn = document.getElementById('calculateBudget')
 let result = document.getElementById('budgetResults')
 try {
     calcBtn.addEventListener('click', function(){
-        for (let i = 0; i<3;i++){
+        for (let i = 0; i<1;i++){
             let newP = document.createElement('p');
             let userIncome = Number(prompt("please enter your total monthly income"));
             let userExp = Number(prompt("Please enter you total monthly expenses"));
@@ -11,10 +11,7 @@ try {
                 break 
             }
             let userSav = userIncome-userExp;
-            if (userSav<=0){
-                newP.textContent = "Warning! you are spending too much and are about to be in debt"
-                result.appendChild(newP)
-            }
+
             newP.textContent = `Monthly Income: ${userIncome.toFixed(2)}`;
             result.appendChild(newP);
     
@@ -24,7 +21,13 @@ try {
     
             newP = document.createElement('p');
             newP.textContent = `Monthly Savings: ${userSav.toFixed(2)}`;
-            result.appendChild(newP);    
+            result.appendChild(newP); 
+
+            if (userSav<=0){
+                newp = document.createElement('p');
+                newP.textContent = "Warning! you are spending too much and are about to be in debt";
+                result.appendChild(newP);
+            }
         }
     })
 
